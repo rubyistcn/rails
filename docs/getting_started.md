@@ -1,17 +1,21 @@
-**DO NOT READ THIS FILE ON GITHUB, GUIDES ARE PUBLISHED ON https://guides.rubyonrails.org.**
+---
+layout: default
+title: Rails 起步
+nav_order: 2
+---
 
-Getting Started with Rails
+Rails 起步
 ==========================
 
 This guide covers getting up and running with Ruby on Rails.
 
 After reading this guide, you will know:
 
-* How to install Rails, create a new Rails application, and connect your
+* [x] How to install Rails, create a new Rails application, and connect your
   application to a database.
-* The general layout of a Rails application.
-* The basic principles of MVC (Model, View, Controller) and RESTful design.
-* How to quickly generate the starting pieces of a Rails application.
+* [x] The general layout of a Rails application.
+* [x] The basic principles of MVC (Model, View, Controller) and RESTful design.
+* [x] How to quickly generate the starting pieces of a Rails application.
 
 --------------------------------------------------------------------------------
 
@@ -221,7 +225,7 @@ This will start up Puma, a web server distributed with Rails by default. To see
 your application in action, open a browser window and navigate to
 <http://localhost:3000>. You should see the Rails default information page:
 
-![Rails startup page screenshot](images/getting_started/rails_welcome.png)
+![Rails startup page screenshot](../../assets/images/getting_started/rails_welcome.png)
 
 When you want to stop the web server, hit Ctrl+C in the terminal window where
 it's running. In the development environment, Rails does not generally
@@ -1573,7 +1577,7 @@ add that to the `app/views/articles/show.html.erb`.
 Now you can add articles and comments to your blog and have them show up in the
 right places.
 
-![Article with Comments](images/getting_started/article_with_comments.png)
+![Article with Comments](../../assets/images/getting_started/article_with_comments.png)
 
 Refactoring
 -----------
@@ -2065,7 +2069,7 @@ class CommentsController < ApplicationController
 Now if you try to create a new article, you will be greeted with a basic HTTP
 Authentication challenge:
 
-![Basic HTTP Authentication Challenge](images/getting_started/challenge.png)
+![Basic HTTP Authentication Challenge](../../assets/images/getting_started/challenge.png)
 
 After entering the correct username and password, you will remain authenticated
 until a different username and password is required or the browser is closed.

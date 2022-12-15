@@ -7,7 +7,7 @@ This guide covers how to set up an environment for Ruby on Rails core developmen
 
 After reading this guide, you will know:
 
-* How to set up your machine for Rails development
+* [x] How to set up your machine for Rails development
 
 --------------------------------------------------------------------------------
 

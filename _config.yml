@@ -6,3 +6,8 @@ url: https://docs.rubyist.cn/rails
 
 aux_links:
   Rubyist 文集: https://docs.rubyist.cn
+
+callouts:
+  work_in_progress:
+    color: yellow
+

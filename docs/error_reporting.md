@@ -7,8 +7,8 @@ This guide introduces ways to manage exceptions that occur in Ruby on Rails appl
 
 After reading this guide, you will know:
 
-* How to use Rails' error reporter to capture and report errors.
-* How to create custom subscribers for your error-reporting service.
+* [x] How to use Rails' error reporter to capture and report errors.
+* [x] How to create custom subscribers for your error-reporting service.
 
 --------------------------------------------------------------------------------
 
