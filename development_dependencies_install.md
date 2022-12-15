@@ -1,4 +1,8 @@
-**DO NOT READ THIS FILE ON GITHUB, GUIDES ARE PUBLISHED ON https://guides.rubyonrails.org.**
+---
+layout: default
+title: 安装开发需要的依赖软件
+nav_exclude: true
+---
 
 Development Dependencies Install
 ================================

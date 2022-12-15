@@ -1,4 +1,8 @@
-**DO NOT READ THIS FILE ON GITHUB, GUIDES ARE PUBLISHED ON https://guides.rubyonrails.org.**
+---
+layout: default
+title: Rails 应用程序模板
+nav_exclude: true
+---
 
 Rails Application Templates
 ===========================

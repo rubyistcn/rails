@@ -7,9 +7,9 @@ nav_order: 2
 Rails 起步
 ==========================
 
-This guide covers getting up and running with Ruby on Rails.
+本文内容涵盖了 Ruby on Rails 起步和运作相关知识。
 
-After reading this guide, you will know:
+通过阅读本文，您将了解：
 
 * [x] How to install Rails, create a new Rails application, and connect your
   application to a database.

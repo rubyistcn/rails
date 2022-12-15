@@ -1,4 +1,8 @@
-**DO NOT READ THIS FILE ON GITHUB, GUIDES ARE PUBLISHED ON https://guides.rubyonrails.org.**
+---
+layout: default
+title: Rails 应用程序中的错误报告
+nav_exclude: true
+---
 
 Error Reporting in Rails Applications
 ========================
