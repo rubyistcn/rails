@@ -1,8 +1,8 @@
-title: Just the Docs Template
+title: Rails 指南
 description: A starter template for a Jeykll site using the Just the Docs theme!
 theme: just-the-docs
 
-url: https://just-the-docs.github.io
+url: https://docs.rubyist.cn/rails
 
 aux_links:
-  Template Repository: https://github.com/just-the-docs/just-the-docs-template
+  Rubyist 文集: https://docs.rubyist.cn
