@@ -11,173 +11,131 @@ Rails 起步
 
 通过阅读本文，您将了解：
 
-* [x] How to install Rails, create a new Rails application, and connect your
-  application to a database.
-* [x] The general layout of a Rails application.
-* [x] The basic principles of MVC (Model, View, Controller) and RESTful design.
-* [x] How to quickly generate the starting pieces of a Rails application.
+* [x] 如何安装 Rails、创建新 Rails 应用程序和连接应用程序与数据库；
+* [x] Rails 应用程序的常见版式；
+* [x] MVC（Model、View、Controller）基本原理和 REST式设置；
+* [x] 如何快速生成 Rails 应用程序框架；
 
 --------------------------------------------------------------------------------
 
-Guide Assumptions
+文章预期
 -----------------
 
-This guide is designed for beginners who want to get started with creating a Rails
-application from scratch. It does not assume that you have any prior experience
-with Rails.
+本文面向那些想通过创建一个 Rails 应用就可以入门的初学者——并不需要您有任何的 Rails 开发
+经验。
 
-Rails is a web application framework running on the Ruby programming language.
-If you have no prior experience with Ruby, you will find a very steep learning
-curve diving straight into Rails. There are several curated lists of online resources
-for learning Ruby:
+Rails 是一款基于 Ruby 编程语言的网络应用程序框架。如果您没有任何 Ruby 语言开发经验而
+直接投入 Rails 的学习，可能学习难度有些大。有一些很好的在线 Ruby 学习资源可供选择：
 
-* [Official Ruby Programming Language website](https://www.ruby-lang.org/en/documentation/)
-* [List of Free Programming Books](https://github.com/EbookFoundation/free-programming-books/blob/master/books/free-programming-books-langs.md#ruby)
+* [官方 Ruby 编程语言网站](https://www.ruby-lang.org/en/documentation/)
+* [自由编程图书清单](https://github.com/EbookFoundation/free-programming-books/blob/master/books/free-programming-books-langs.md#ruby)
 
-Be aware that some resources, while still excellent, cover older versions of
-Ruby, and may not include some syntax that you will see in day-to-day
-development with Rails.
+这些资源都非常好，覆盖了旧版的 Ruby 语言功能特点，对于一些新的 Rails 开发的语法可能涉及不足。
 
-What is Rails?
+Rails 是什么？
 --------------
 
-Rails is a web application development framework written in the Ruby programming language.
-It is designed to make programming web applications easier by making assumptions
-about what every developer needs to get started. It allows you to write less
-code while accomplishing more than many other languages and frameworks.
-Experienced Rails developers also report that it makes web application
-development more fun.
+Rails 是一款基于 Ruby 编程语言的网络应用程序框架。
+其设计初衷就是使每个网络应用程序开发者在起步时更容易。而且是用更少的代码完成更复杂的功能（同其它语言或者框架相比）。经验丰富的 Rails 开发者说 Rails 开发乐趣更多。
 
-Rails is opinionated software. It makes the assumption that there is a "best"
-way to do things, and it's designed to encourage that way - and in some cases to
-discourage alternatives. If you learn "The Rails Way" you'll probably discover a
-tremendous increase in productivity. If you persist in bringing old habits from
-other languages to your Rails development, and trying to use patterns you
-learned elsewhere, you may have a less happy experience.
+Rails 是有主见的软件——它认为做任何事，都有一种“最好”的方式——这也是被鼓励的方式。如果您学会了“Rails 方式”，您可能会发现很多时候都做到了事半功倍的效果。如果您在 Rails 开发中坚持使用来自于其它语言编程习惯或者开发模式，您将很少感受到来自 Rails 的开发乐趣。
 
-The Rails philosophy includes two major guiding principles:
+Rails 哲学主要包括两个基本原则：
 
-* **Don't Repeat Yourself:** DRY is a principle of software development which
-  states that "Every piece of knowledge must have a single, unambiguous, authoritative
-  representation within a system". By not writing the same information over and over
-  again, our code is more maintainable, more extensible, and less buggy.
-* **Convention Over Configuration:** Rails has opinions about the best way to do many
-  things in a web application, and defaults to this set of conventions, rather than
-  require that you specify minutiae through endless configuration files.
+* **不重复自己（Don't Repeat Yourself——DRY）：** DRY 是软件开发的原则——“一个系统内每个知识点都应当是单一、独立的、权威的”。同样的信息不要一遍遍的重复，我们的代码才更具有可维护性、更具有弹性和不那么丑陋。
+* **约定优于配置（Convention Over Configuration）：** 在一个网络应用程序中，Rails 有关于做事的最好方式，默认就会使用这种方式（约定），而不用必须使用无休止的配置文件来进行配置。
 
-Creating a New Rails Project
+创建一个新 Rails 项目
 ----------------------------
 
-The best way to read this guide is to follow it step by step. All steps are
-essential to run this example application and no additional code or steps are
-needed.
+学习本文最好的方式就是跟着一步步的做。所有的步骤都是运行本示例应用必须的，没有任何多余的代码和步骤。
 
-By following along with this guide, you'll create a Rails project called
-`blog`, a (very) simple weblog. Before you can start building the application,
-you need to make sure that you have Rails itself installed.
+通过跟随本文步骤，您会创建一个叫做 `blog` 的 Rails 项目，一个（非常）简洁的博客程序。在您开始构建应用程序之前，您需要确保您已安装好 Rails。
 
-NOTE: The examples below use `$` to represent your terminal prompt in a UNIX-like OS,
-though it may have been customized to appear differently. If you are using Windows,
-your prompt will look something like `C:\source_code>`.
+{: .note }
+下面示例中使用 `$` 代表您的类 UNIX 系统中的终端提示符，当然可能根据不同定制显示略有不同。如果您使用 Windows，您的提示符可能看起来像 `C:\source_code>`。
 
-### Installing Rails
+### 安装 Rails
 
-Before you install Rails, you should check to make sure that your system has the
-proper prerequisites installed. These include:
+安装 Rails 之前，您需要检查一下您的系统是否正确安装了需要预装的软件，包括：
 
 * Ruby
 * SQLite3
 
-#### Installing Ruby
+#### 安装 Ruby
 
-Open up a command line prompt. On macOS open Terminal.app; on Windows choose
-"Run" from your Start menu and type `cmd.exe`. Any commands prefaced with a
-dollar sign `$` should be run in the command line. Verify that you have a
-current version of Ruby installed:
+打开一个命令行终端。在 macOS 打开 Terminal.app；在 Windows 上从开始菜单选择“运行”，输入 `cmd.exe`。输入任何命令前如果能看到一个美元符号 `$` 就表明已经是进入命令行了。验证您的当前安装的 Ruby 版本：
 
 ```bash
 $ ruby --version
 ruby 2.7.0
 ```
 
-Rails requires Ruby version 2.7.0 or later. It is preferred to use the latest Ruby version.
-If the version number returned is less than that number (such as 2.3.7, or 1.8.7),
-you'll need to install a fresh copy of Ruby.
+Rails 需要 Ruby 版本最低为 2.7.0，最好使用最新的 Ruby 版本。如果返回的版本数字低于该数字（例如 2.3.7 或者 1.8.7）您就需要安装一个新的 Ruby。
 
-To install Rails on Windows, you'll first need to install [Ruby Installer](https://rubyinstaller.org/).
+在 Windows 上安装 Rails，首先需要安装 [Ruby Installer](https://rubyinstaller.org/)。
 
-For more installation methods for most Operating Systems take a look at
-[ruby-lang.org](https://www.ruby-lang.org/en/documentation/installation/).
+更多关于不同操作系统的详细安装信息参阅
+[ruby-lang.org](https://www.ruby-lang.org/en/documentation/installation/)。
 
-#### Installing SQLite3
+#### 安装 SQLite3
 
-You will also need an installation of the SQLite3 database.
-Many popular UNIX-like OSes ship with an acceptable version of SQLite3.
-Others can find installation instructions at the [SQLite3 website](https://www.sqlite.org).
+您需要安装一个 SQLite3 数据库。很多流行的类 UNIX 操作系统都自带 SQLite3。如果没有可以参考 [SQLite3 站点](https://www.sqlite.org)的安装说明。
 
-Verify that it is correctly installed and in your load `PATH`:
+验证是否已经正确安装并加载到 `PATH` 中：
 
 ```bash
 $ sqlite3 --version
 ```
 
-The program should report its version.
+程序应该会反馈其版本。
 
-#### Installing Rails
+#### 安装 Rails
 
-To install Rails, use the `gem install` command provided by RubyGems:
+安装 Rails，使用 `gem install` 命令安装来自 RubyGems 的版本：
 
 ```bash
 $ gem install rails
 ```
 
-To verify that you have everything installed correctly, you should be able to
-run the following in a new terminal:
+验证安装是否正确，您需要在一个新的命令行下运行下面的命令：
 
 ```bash
 $ rails --version
 ```
 
-If it says something like "Rails 7.0.0", you are ready to continue.
+如果看到类似“Rails 7.0.0”的信息，您已成功，准备继续。
 
-### Creating the Blog Application
+### 创建 Blog 应用程序
 
-Rails comes with a number of scripts called generators that are designed to make
-your development life easier by creating everything that's necessary to start
-working on a particular task. One of these is the new application generator,
-which will provide you with the foundation of a fresh Rails application so that
-you don't have to write it yourself.
+Rails 自带一系列可使您的开发变简单的生成器脚本（对于特定任务创建必要的东西），其中之
+一就是新应用程序生成器——提供全新 Rails 应用程序的基本框架。
 
-To use this generator, open a terminal, navigate to a directory where you have
-rights to create files, and run:
+使用该生成器，打开终端，进入您有创建文件权限的目录，运行：
 
 ```bash
 $ rails new blog
 ```
 
-This will create a Rails application called Blog in a `blog` directory and
-install the gem dependencies that are already mentioned in `Gemfile` using
-`bundle install`.
+这将在 `blog` 目录创建一个叫做 Blog 的 Rails 应用程序，并且可以通过 `bundle install` 
+命令安装在 `Gemfile` 中设定的依赖软件。
 
-TIP: You can see all of the command line options that the Rails application
-generator accepts by running `rails new --help`.
+{: .info }
+通过运行 `rails new --help`，您已经看到 Rails 应用程序生成器可接收的所有的命令行选项。
 
-After you create the blog application, switch to its folder:
+创建 Blog 程序之后，进入该文件夹：
 
 ```bash
 $ cd blog
 ```
 
-The `blog` directory will have a number of generated files and folders that make
-up the structure of a Rails application. Most of the work in this tutorial will
-happen in the `app` folder, but here's a basic rundown on the function of each
-of the files and folders that Rails creates by default:
+`blog` 目录内有很多 Rails 应用程序默认生成的文件和文件夹。本教程的大部分工作都是在 `app` 完成，但是这些 Rails 默认创建的文件和文件夹都有自己的基本功能：
 
-| File/Folder | Purpose |
+| 文件/文件夹 | 作用     |
 | ----------- | ------- |
-|app/|Contains the controllers, models, views, helpers, mailers, channels, jobs, and assets for your application. You'll focus on this folder for the remainder of this guide.|
-|bin/|Contains the `rails` script that starts your app and can contain other scripts you use to set up, update, deploy, or run your application.|
-|config/|Contains configuration for your application's routes, database, and more. This is covered in more detail in [Configuring Rails Applications](configuring.html).|
+|app/|包含 controller、model、view、helper、mailer、channel、job 和您的应用程序的 asset。本文将主要在此文件夹内进行操作。|
+|bin/|包含了从启动您的应用到配置、更新、部署或者运行您的应用的各种 `rails` 脚本。|
+|config/|包含配置文件：您的应用程序路由、数据库等等，更多信息参阅[配置 Rails 应用程序](/digging-deeper/configuring.html)。|
 |config.ru|Rack configuration for Rack-based servers used to start the application. For more information about Rack, see the [Rack website](https://rack.github.io/).|
 |db/|Contains your current database schema, as well as the database migrations.|
 |Gemfile<br>Gemfile.lock|These files allow you to specify what gem dependencies are needed for your Rails application. These files are used by the Bundler gem. For more information about Bundler, see the [Bundler website](https://bundler.io).|
@@ -192,7 +150,7 @@ of the files and folders that Rails creates by default:
 |vendor/|A place for all third-party code. In a typical Rails application this includes vendored gems.|
 |.gitattributes|This file defines metadata for specific paths in a git repository. This metadata can be used by git and other tools to enhance their behavior. See the [gitattributes documentation](https://git-scm.com/docs/gitattributes) for more information.|
 |.gitignore|This file tells git which files (or patterns) it should ignore. See [GitHub - Ignoring files](https://help.github.com/articles/ignoring-files) for more information about ignoring files.|
-|.ruby-version|This file contains the default Ruby version.|
+|.ruby-version|此文件包含默认 Ruby 版本。|
 
 Hello, Rails!
 -------------
